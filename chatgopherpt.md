@@ -59,7 +59,7 @@ Use one script for both "list" and "run":
     wildcard = false
     command = "/var/gopher/output/chatgopherpt"
     arguments = ["list"]
-    menu = true
+    menu = false
 
     [[gateway]]
     selector = "/gateway/ollama/*"
@@ -67,17 +67,7 @@ Use one script for both "list" and "run":
     wildcard = true
     command = "/var/gopher/output/chatgopherpt"
     arguments = ["$wildcard", "$search"]
-    menu = false
-
-Why `menu=false` for /gateway/ollama/* ?
----------------------------------------
-
-`ollama run` returns plain text (often with code blocks). That is not a gopher menu.
-So we treat it as text.
-
-When the server is busy, this script prints a short *menu-style* response anyway.
-If the client renders it as text, that's fine — it's still readable.
-
+    menu = true
 
 Code
 ====
@@ -245,4 +235,5 @@ KISS locking via `createDirectory`:
 > releaseLock = do
 >   _ <- try (removeDirectoryRecursive lockDir) :: IO (Either SomeException ())
 >   pure ()
+
 
