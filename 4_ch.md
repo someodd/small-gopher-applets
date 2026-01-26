@@ -28,6 +28,8 @@ Made kind of as a joke because I read [a post](https://4-ch.net/tech/kareha.pl/1
 
 Much love and lulz to this poster.
 
+This is currently running at: gopher://gopher.someodd.zip/1/gateway/4_ch
+
 Installing Dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~
 
